@@ -1,5 +1,12 @@
 <launch>
 
+  <arg name="x" default="0.0"/>
+  <arg name="y" default="0.0"/>
+  <arg name="z" default="1.0"/>
+  <arg name="R" default="0.0"/>
+  <arg name="P" default="0.0"/>
+  <arg name="Y" default="0.0"/>
+
   <arg name="fixed" default="false"/>
   <arg name="robot_ns" default="/"/>
   <arg name="model_name" default="leo"/>
@@ -19,6 +26,12 @@
   </include>
 
   <include file="$(find leo_gazebo)/launch/spawn_robot.launch">
+    <arg name="x" value="$(arg x)"/>
+    <arg name="y" value="$(arg y)"/>
+    <arg name="z" value="$(arg z)"/>
+    <arg name="R" value="$(arg R)"/>
+    <arg name="P" value="$(arg P)"/>
+    <arg name="Y" value="$(arg Y)"/>
     <arg name="fixed" value="$(arg fixed)"/>
     <arg name="robot_ns" value="$(arg robot_ns)"/>
     <arg name="model_name" value="$(arg model_name)"/>
