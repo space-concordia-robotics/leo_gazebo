@@ -26,7 +26,9 @@ install(DIRECTORY config/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/config
 )
 
-catkin_install_python(PROGRAMS scripts/odom_relay
+catkin_install_python(PROGRAMS 
+  scripts/odom_relay
+  scripts/zed2_imu_transform_broadcaster
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
