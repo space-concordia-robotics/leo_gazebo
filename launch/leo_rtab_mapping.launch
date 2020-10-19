@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+	<arg name="three_d" default="true"/>
+
+	<include file="$(find leo_navigation)/launch/odometry.launch">
+		<arg name="three_d" value="true"/>
+	</include>
+	<include file="$(find leo_gazebo)/launch/leo_marsyard.launch"/>
+	<include file="$(find zed_rtabmap_example)/launch/zed_rtabmap.launch"/>
+	<node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen">
+		<remap from="cmd_vel" to="/differential_drive/cmd_vel"/>
+	</node>
+</launch>

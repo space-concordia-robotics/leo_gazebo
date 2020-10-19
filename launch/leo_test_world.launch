@@ -1,8 +1,8 @@
-<launch>
+	<launch>
 
   <include file="$(find leo_gazebo)/launch/leo_gazebo.launch"
            pass_all_args="true">
-    <arg name="world_name" value="$(find marsyard)/worlds/marsyard.world"/>
+    <arg name="world_name" value="$(find marsyard)/worlds/test_world.world"/>
   </include>
 
 </launch>
